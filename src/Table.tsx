@@ -1,4 +1,3 @@
-import Devider from "./Devider";
 
 const Table = ({ data }) => {
     return (
