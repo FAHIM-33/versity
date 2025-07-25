@@ -5,21 +5,103 @@ function App() {
 
   const auditData = [
     {
-      clauseNo: "1.1",
-      checkpoint: "Are the Standard procedure/ Work Instructions/Flow Chart clearly Visible and well communicated for all the process?",
-      pointsPossible: 10,
-      pointsEarned: 8,
-      nonConformitySummary: ""
+        clauseNo: "1.1",
+        checkpoint: "Are the standard procedures, work instructions, and flow charts clearly visible and well communicated to all personnel?",
+        pointsPossible: 10,
+        pointsEarned: 8,
+        nonConformitySummary: "",
+        red:false,
     },
     {
-      clauseNo: "1.2",
-      checkpoint: "Checkpoint Description 2",
-      pointsPossible: 15,
-      pointsEarned: 12,
-      nonConformitySummary: "Summary of Non-Conformity 2"
+        clauseNo: "1.2",
+        checkpoint: "Are the quality policy and product safety policy effectively communicated to all personnel?",
+        pointsPossible: 15,
+        pointsEarned: 12,
+        nonConformitySummary: "",
+        red:false,
     },
-    // Add more objects as needed
-  ];
+    {
+        clauseNo: "1.3",
+        checkpoint: "Are the quality objectives effectively communicated to all personnel?",
+        pointsPossible: 10,
+        pointsEarned: 0,
+        nonConformitySummary: "",
+        red:true,
+    },
+    {
+        clauseNo: "1.4",
+        checkpoint: "Are the personnel adequately trained and competent for their roles? Are they well aware of their job descriptions?",
+        pointsPossible: 15,
+        pointsEarned: 0,
+        nonConformitySummary: "",
+        red:false,
+    },
+    {
+        clauseNo: "1.5",
+        checkpoint: "Is the work environment/housekeeping well organized? Are materials kept away from walls (50 cm from exterior walls) and windows (150 cm from windows and doors)?",
+        pointsPossible: 10,
+        pointsEarned: 0,
+        nonConformitySummary: "",
+        red:false,
+    },
+    {
+        clauseNo: "1.6",
+        checkpoint: "Are the sharp tools control procedures effectively functioning at the workstation?",
+        pointsPossible: 10,
+        pointsEarned: 0,
+        nonConformitySummary: "",
+        red:false,
+    },
+    {
+        clauseNo: "1.7",
+        checkpoint: "Are workplaces free from the following items: staplers, metal paper clips, pins, and other small metal objects?",
+        pointsPossible: 10,
+        pointsEarned: 0,
+        nonConformitySummary: "",
+        red:true,
+    },
+    {
+        clauseNo: "1.8",
+        checkpoint: "Are the non-conformity management procedures effectively functioning at the workstations?",
+        pointsPossible: 15,
+        pointsEarned: 0,
+        nonConformitySummary: "",
+        red:true,
+    },
+    {
+        clauseNo: "1.9",
+        checkpoint: "Is lighting adequate (1000 lux)?",
+        pointsPossible: 10,
+        pointsEarned: 0,
+        nonConformitySummary: "",
+        red:false,
+    },
+    {
+        clauseNo: "1.10",
+        checkpoint: "Is the factory able to maintain the walls, windows, flooring, and ceiling? Are there no signs of water leakage or moldy marks?",
+        pointsPossible: 15,
+        pointsEarned: 0,
+        nonConformitySummary: "",
+        red:false,
+    },
+    {
+        clauseNo: "1.11",
+        checkpoint: "Are the equipment regularly calibrated and maintained?",
+        pointsPossible: 10,
+        pointsEarned: 0,
+        nonConformitySummary: "",
+        red:false,
+    },
+    {
+        clauseNo: "1.12",
+        checkpoint: "Is the metal detection machine calibrated by a third party, stating 1.0 / 1.2 / 1.5 mm sensitivity testing and available?",
+        pointsPossible: 15,
+        pointsEarned: 0,
+        nonConformitySummary: "",
+        red:false,
+    },
+];
+
 
 
   return (

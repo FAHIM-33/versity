@@ -16,10 +16,10 @@ const Table = ({ data }) => {
                 <tbody>
                     {data.map((row, index) => (
                         <tr key={index}>
-                            <td className="border border-gray-300 px-4 w-20">{row.clauseNo}</td>
-                            <td className="border border-gray-300 px-4 max-w-[30vw] brr">{row.checkpoint}</td>
-                            <td className="border border-gray-300 px-4 w-20">{row.pointsPossible}</td>
-                            <td className="border border-gray-300 px-4 w-20">{row.pointsEarned}</td>
+                            <td className={`${row.red?"text-red-500":""} text-center py-1 border border-gray-300 px-4 w-20`}>{row.clauseNo}</td>
+                            <td className={` ${row.red?"text-red-500":""} border border-gray-300 px-4 max-w-[30vw]`}>{row.checkpoint}</td>
+                            <td className="border border-gray-300 px-4 text-center py-1 w-20">{row.pointsPossible}</td>
+                            <td className="border border-gray-300 px-4 text-center py-1 w-20">{row.pointsEarned}</td>
                             <td className="border border-gray-300 px-4">
                                 <input 
                                     type="text" 
