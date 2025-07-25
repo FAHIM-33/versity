@@ -2,3 +2,10 @@
 body{
 
 }
+
+.brr{
+    border: 1px solid red;
+}
+.brb{
+    border: 1px solid blue;
+}
