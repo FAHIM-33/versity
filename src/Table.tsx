@@ -1,3 +1,4 @@
+import Toggle from "./Toggle";
 
 const Table = ({ data }) => {
     return (
@@ -15,18 +16,28 @@ const Table = ({ data }) => {
                 <tbody>
                     {data.map((row, index) => (
                         <tr key={index}>
-                            <td className={`${row.red?"text-red-500":""} text-center py-1 border border-gray-300 px-4 w-20`}>{row.clauseNo}</td>
-                            <td className={` ${row.red?"text-red-500":""} border border-gray-300 px-4 max-w-[30vw]`}>{row.checkpoint}</td>
+                            <td className={`${row.red ? "text-red-500" : ""} text-center py-1 border border-gray-300 px-4 w-20`}>{row.clauseNo}</td>
+                            <td className={`${row.red ? "text-red-500" : ""} border border-gray-300 px-4 max-w-[30vw] whitespace-pre-wrap`}>
+                                {row.checkpoint.split("\n").map((line, idx) => (
+                                    <span key={idx}>
+                                        {line}
+                                        <br />
+                                    </span>
+                                ))}
+                            </td>
                             <td className="border border-gray-300 px-4 text-center py-1 w-20">{row.pointsPossible}</td>
-                            <td className="border border-gray-300 px-4 text-center py-1 w-20">{row.pointsEarned}</td>
+                            {/* <td className="border border-gray-300 px-4 text-center py-1 w-20">{row.pointsEarned}</td> */}
+                            <td className="border border-gray-300 px-4 text-center py-1 w-20">
+                                <Toggle />
+                            </td>
                             <td className="border border-gray-300 px-4">
-                                <input 
-                                    type="text" 
-                                    className="w-full" 
-                                    value={row.nonConformitySummary} 
+                                <input
+                                    type="text"
+                                    className="w-full"
+                                    value={row.nonConformitySummary}
                                     onChange={(e) => {
                                         // Handle input change if needed
-                                    }} 
+                                    }}
                                 />
                             </td>
                         </tr>
