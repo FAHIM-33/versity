@@ -544,7 +544,7 @@ const pressing = [
     pointsPossible: 10,
     pointsEarned: 0,
     nonConformitySummary: "",
-    red: false,
+    red: true,
   },
   {
     clauseNo: "6.4",
@@ -571,6 +571,207 @@ const pressing = [
     red: false,
   }
 ];
+
+const finalInspection = [
+  {
+    clauseNo: "7.1",
+    checkpoint: "Approved / reference sample & trim cards or duplicate copy (with authorized signature)",
+    pointsPossible: 10,
+    pointsEarned: 0,
+    nonConformitySummary: "",
+    red: false,
+  },
+  {
+    clauseNo: "7.2",
+    checkpoint: "Implementing 100% inspection for workmanship / measurement / appearance / embellishment and no thread cutting is carried out by inspector",
+    pointsPossible: 10,
+    pointsEarned: 0,
+    nonConformitySummary: "",
+    red: false,
+  },
+  {
+    clauseNo: "7.3",
+    checkpoint: "Implementing stocking policy, clear identification of garment inspected, rejected & waiting to be inspected, and non-conforming products are being identified & segregated",
+    pointsPossible: 10,
+    pointsEarned: 0,
+    nonConformitySummary: "",
+    red: false,
+  },
+  {
+    clauseNo: "7.4",
+    checkpoint: "Inspection reports are analyzed for further improvement",
+    pointsPossible: 10,
+    pointsEarned: 0,
+    nonConformitySummary: "",
+    red: false,
+  }
+];
+
+const packing = [
+  {
+    clauseNo: "8.1",
+    checkpoint: "Approved / reference sample available to show packing requirement with authorized signature",
+    pointsPossible: 10,
+    pointsEarned: 0,
+    nonConformitySummary: "",
+    red: false,
+  },
+  {
+    clauseNo: "8.2",
+    checkpoint: "A clear separation of size / color of packaging trims",
+    pointsPossible: 10,
+    pointsEarned: 0,
+    nonConformitySummary: "",
+    red: false,
+  },
+  {
+    clauseNo: "8.3",
+    checkpoint: "Implementing one style / one color / one size policy",
+    pointsPossible: 10,
+    pointsEarned: 0,
+    nonConformitySummary: "",
+    red: false,
+  },
+  {
+    clauseNo: "8.4",
+    checkpoint: "Implementing stocking policy for folded / packed products",
+    pointsPossible: 10,
+    pointsEarned: 0,
+    nonConformitySummary: "",
+    red: false,
+  },
+  {
+    clauseNo: "8.5",
+    checkpoint: "Is packing materials clean & free from damage or contamination?",
+    pointsPossible: 10,
+    pointsEarned: 0,
+    nonConformitySummary: "",
+    red: false,
+  },
+  {
+    clauseNo: "8.6",
+    checkpoint: "Are unauthorized sharp tools used inside the packing section?",
+    pointsPossible: 10,
+    pointsEarned: 0,
+    nonConformitySummary: "",
+    red: false,
+  }
+];
+const metalDetection = [
+  {
+    clauseNo: "9.1",
+    checkpoint: "Conduct daily MD machine calibration using accurate measuring tool for checking 9 points and machine maintenance with record",
+    pointsPossible: 10,
+    pointsEarned: 0,
+    nonConformitySummary: "",
+    red: false,
+  },
+  {
+    clauseNo: "9.2",
+    checkpoint: "Equipped with a metal free-table, contamination box for quarantine items (locked / secured and documented), a calibrated hand-held MD machine and FE ferrous card (1.0 / 1.2 / 1.5 mm)",
+    pointsPossible: 10,
+    pointsEarned: 0,
+    nonConformitySummary: "",
+    red: false,
+  },
+  {
+    clauseNo: "9.3",
+    checkpoint: "Implementing a metal free zone area (operators are metal free - watch / belt / accessories etc)",
+    pointsPossible: 10,
+    pointsEarned: 0,
+    nonConformitySummary: "",
+    red: false,
+  },
+  {
+    clauseNo: "9.4",
+    checkpoint: "MD records are analysed for further improvement and kept inside the cabinet",
+    pointsPossible: 10,
+    pointsEarned: 0,
+    nonConformitySummary: "",
+    red: false,
+  },
+  {
+    clauseNo: "9.5",
+    checkpoint: "Correct execution of hand held detection for products not passing MD machine",
+    pointsPossible: 10,
+    pointsEarned: 0,
+    nonConformitySummary: "",
+    red: false,
+  },
+  {
+    clauseNo: "9.6",
+    checkpoint: "All cartons before and after MD detection are placed on the plastic / metal (rust-free metal pallet)",
+    pointsPossible: 10,
+    pointsEarned: 0,
+    nonConformitySummary: "",
+    red: false,
+  },
+  {
+    clauseNo: "9.7",
+    checkpoint: "Were all test results recorded correctly on the daily metal detector log sheet?",
+    pointsPossible: 10,
+    pointsEarned: 0,
+    nonConformitySummary: "",
+    red: false,
+  },
+  {
+    clauseNo: "9.8",
+    checkpoint: "Is the metal detection area segregated to prevent contamination of detected items?",
+    pointsPossible: 10,
+    pointsEarned: 0,
+    nonConformitySummary: "",
+    red: false,
+  },
+  {
+    clauseNo: "9.9",
+    checkpoint: "Is there a clear procedure for handling rejected/alarmed garments?",
+    pointsPossible: 10,
+    pointsEarned: 0,
+    nonConformitySummary: "",
+    red: false,
+  },
+  {
+    clauseNo: "9.10",
+    checkpoint: "Is there a designated, secured area for rejected garments established?",
+    pointsPossible: 10,
+    pointsEarned: 0,
+    nonConformitySummary: "",
+    red: false,
+  },
+  {
+    clauseNo: "9.11",
+    checkpoint: "Is the investigation process for metal contamination documented?",
+    pointsPossible: 10,
+    pointsEarned: 0,
+    nonConformitySummary: "",
+    red: false,
+  },
+  {
+    clauseNo: "9.12",
+    checkpoint: "Are findings of metal contamination recorded?",
+    pointsPossible: 10,
+    pointsEarned: 0,
+    nonConformitySummary: "",
+    red: false,
+  },
+  {
+    clauseNo: "9.13",
+    checkpoint: "Are all non-confirming trims/accessories/goods kept into the locked box (RED box) with records for 3-6 months?",
+    pointsPossible: 10,
+    pointsEarned: 0,
+    nonConformitySummary: "",
+    red: false,
+  },
+  {
+    clauseNo: "9.14",
+    checkpoint: "Disposal records of non-confirming trims/accessories/goods are kept at the workplace?",
+    pointsPossible: 10,
+    pointsEarned: 0,
+    nonConformitySummary: "",
+    red: false,
+  }
+];
+
 
 
   return (
@@ -614,10 +815,15 @@ const pressing = [
           <Table data={auditData} />
           <Devider percentage={19.23} title="V: Sewing Section"></Devider>
           <Table data={sewing} />
-          <Devider percentage={0.00} title="VI: Ironing Section"></Devider>
+          <Devider percentage={0.00} title="VI: Ironing Section
+          "></Devider>
           <Table data={pressing} />
-          <Devider percentage={66} title="1: general Quality management system and product safety"></Devider>
-          <Table data={auditData} />
+          <Devider percentage={0.00} title="VII: Final Quality Checking"></Devider>
+          <Table data={finalInspection} />
+          <Devider percentage={0.00} title="VIII: Folding/Packing section"></Devider>
+          <Table data={packing} />
+          <Devider percentage={0.00} title="IX: Metal Detection & Product Safety"></Devider>
+          <Table data={metalDetection} />
         </section>
 
       </div>
