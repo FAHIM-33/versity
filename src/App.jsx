@@ -142,7 +142,12 @@ function App() {
 
         <section>
           <Devider percentage={66} title="1: general Quality management system and product safety"></Devider>
-
+          <Table data={auditData} />
+          <Devider percentage={66} title="1: general Quality management system and product safety"></Devider>
+          <Table data={auditData} />
+          <Devider percentage={66} title="1: general Quality management system and product safety"></Devider>
+          <Table data={auditData} />
+          <Devider percentage={66} title="1: general Quality management system and product safety"></Devider>
           <Table data={auditData} />
         </section>
 
