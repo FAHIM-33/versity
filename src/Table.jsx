@@ -6,11 +6,13 @@ import Toggle from "./Toggle";
 const Table = ({ data, setData, dataKey }) => {
     const [loadingRow, setLoadingRow] = useState(null);
     const [summaryEdits, setSummaryEdits] = useState({});
+    const [previewImg, setPreviewImg] = useState(null);
+
 
     const updateLocalData = (updatedRow) => {
         setData(prevData => ({
             ...prevData,
-            [dataKey]: prevData[dataKey].map(row => 
+            [dataKey]: prevData[dataKey].map(row =>
                 row._id === updatedRow._id ? updatedRow : row
             )
         }));
@@ -19,10 +21,10 @@ const Table = ({ data, setData, dataKey }) => {
     const handleToggle = async (row) => {
         const newValue = row.pointsEarned === 0 ? 1 : 0;
         const updatedRow = { ...row, pointsEarned: newValue };
-        
+
         // Optimistic update
         updateLocalData(updatedRow);
-        
+
         setLoadingRow(row._id);
         try {
             await axios.patch(`${baseURL}/audit/set-points-earned/${row._id}`, {
@@ -43,13 +45,13 @@ const Table = ({ data, setData, dataKey }) => {
 
     const handleSummaryBlur = async (row) => {
         if (row.nonConformitySummary === summaryEdits[row._id] || summaryEdits[row._id] === undefined) return;
-        
+
         const newSummary = summaryEdits[row._id];
         const updatedRow = { ...row, nonConformitySummary: newSummary };
-        
+
         // Optimistic update
         updateLocalData(updatedRow);
-        
+
         setLoadingRow(row._id);
         try {
             await axios.patch(`${baseURL}/audit/update-non-conformity-summary/${row._id}`, {
@@ -72,10 +74,10 @@ const Table = ({ data, setData, dataKey }) => {
 
     const handleImageChange = async (id, file) => {
         if (!file) return;
-        
+
         const formData = new FormData();
         formData.append('image', file);
-        
+
         setLoadingRow(id);
         try {
             const response = await axios.post(`${baseURL}/audit/upload-image/${id}`, formData, {
@@ -83,7 +85,7 @@ const Table = ({ data, setData, dataKey }) => {
                     'Content-Type': 'multipart/form-data',
                 },
             });
-            
+
             if (response.data.success) {
                 const updatedRow = { ...data.find(row => row._id === id), img: response.data.data.img };
                 updateLocalData(updatedRow);
@@ -150,11 +152,13 @@ const Table = ({ data, setData, dataKey }) => {
                             <td className="border border-gray-300 px-4 text-center py-2">
                                 {row?.img ? (
                                     <div className="relative">
-                                        <img 
-                                            src={`${baseURL.replace('/api/v1', '')}${row.img}`} 
-                                            alt="" 
-                                            className="w-16 h-16 object-cover rounded border"
+                                        <img
+                                            src={`${baseURL.replace('/api/v1', '')}${row.img}`}
+                                            alt=""
+                                            className="w-16 h-16 object-cover rounded border cursor-pointer"
+                                            onClick={() => setPreviewImg(`${baseURL.replace('/api/v1', '')}${row.img}`)}
                                         />
+
                                         {loadingRow === row._id && (
                                             <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded">
                                                 <span className="text-white text-xs">...</span>
@@ -163,8 +167,8 @@ const Table = ({ data, setData, dataKey }) => {
                                     </div>
                                 ) : (
                                     <div className="w-16 h-16 bg-gray-200 rounded border flex items-center justify-center relative">
-                                        <input 
-                                            type="file" 
+                                        <input
+                                            type="file"
                                             accept="image/*"
                                             onChange={(e) => handleImageChange(row._id, e.target.files[0])}
                                             className="absolute inset-0 opacity-0 cursor-pointer"
@@ -183,6 +187,26 @@ const Table = ({ data, setData, dataKey }) => {
                     ))}
                 </tbody>
             </table>
+            {previewImg && (
+                <div
+                    className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center"
+                    onClick={() => setPreviewImg(null)}
+                >
+                    <img
+                        src={previewImg}
+                        alt="Preview"
+                        className="max-w-[90vw] max-h-[90vh] rounded shadow-lg "
+                        onClick={(e) => e.stopPropagation()} // prevent closing when clicking image
+                    />
+                    <button
+                        onClick={() => setPreviewImg(null)}
+                        className="absolute top-4 right-4 text-white text-4xl font-bold"
+                    >
+                        ×
+                    </button>
+                </div>
+            )}
+
         </div>
     );
 };

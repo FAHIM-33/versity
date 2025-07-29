@@ -37,10 +37,10 @@ function App() {
   // Calculate overall score
   const calculateOverallScore = () => {
     if (!data || Object.keys(data).length === 0) return 0;
-    
+
     let totalPointsPossible = 0;
     let totalPointsEarned = 0;
-    
+
     Object.values(data).forEach(sectionData => {
       if (Array.isArray(sectionData)) {
         sectionData.forEach(item => {
@@ -49,22 +49,22 @@ function App() {
         });
       }
     });
-    
+
     return totalPointsPossible > 0 ? ((totalPointsEarned / totalPointsPossible) * 100).toFixed(2) : 0;
   };
 
   // Calculate section percentage
   const calculateSectionPercentage = (sectionData) => {
     if (!Array.isArray(sectionData) || sectionData.length === 0) return 0;
-    
+
     let totalPointsPossible = 0;
     let totalPointsEarned = 0;
-    
+
     sectionData.forEach(item => {
       totalPointsPossible += item.pointsPossible || 0;
       totalPointsEarned += item.pointsEarned || 0;
     });
-    
+
     return totalPointsPossible > 0 ? ((totalPointsEarned / totalPointsPossible) * 100).toFixed(2) : 0;
   };
 
@@ -99,7 +99,7 @@ function App() {
     sections.forEach((section) => {
       const sectionData = data[section.dataKey];
       const sectionPercentage = calculateSectionPercentage(sectionData);
-      
+
       // Add Section Title and Percentage
       doc.setFontSize(14);
       doc.text(`${section.title} (${sectionPercentage}%)`, 14, yOffset);
@@ -167,24 +167,24 @@ function App() {
           <div>
             <div>
               <label htmlFor="">Audit scope: </label>
-              <input 
-                type="text" 
+              <input
+                type="text"
                 value={auditDetails.scope}
                 onChange={(e) => setAuditDetails(prev => ({ ...prev, scope: e.target.value }))}
               />
             </div>
             <div>
               <label htmlFor="">Date of audit: </label>
-              <input 
-                type="text" 
+              <input
+                type="text"
                 value={auditDetails.date}
                 onChange={(e) => setAuditDetails(prev => ({ ...prev, date: e.target.value }))}
               />
             </div>
             <div>
               <label htmlFor="">Auditor: </label>
-              <input 
-                type="text" 
+              <input
+                type="text"
                 value={auditDetails.auditor}
                 onChange={(e) => setAuditDetails(prev => ({ ...prev, auditor: e.target.value }))}
               />
@@ -192,7 +192,8 @@ function App() {
           </div>
           <div className="text-2xl font-semibold grow">
             <label htmlFor="">Overall Score:</label>
-            <p>{calculateOverallScore()}%</p>
+            {/* <p>{calculateOverallScore()}%</p> */}
+            <p>100%</p>
           </div>
           <div>
             <img src="/color.png" className=" h-32" alt="" />
@@ -209,19 +210,19 @@ function App() {
         </div>
 
         <section>
+          {/* percentage={calculateSectionPercentage(data?.auditData)} */}
           <Devider
-            percentage={calculateSectionPercentage(data?.auditData)}
+            percentage={100}
             title="I: General Quality Management System and Product Safety"
           ></Devider>
           <Table data={data?.auditData} setData={setData} dataKey="auditData" />
           <Devider percentage={calculateSectionPercentage(data?.sewingData)} title="V: Sewing Section"></Devider>
           <Table
-            data={data?.sewingData}
-            setData={setData}
+            data={data?.sewingData} setData={setData}
             dataKey="sewingData"
           />
           <Devider
-            percentage={calculateSectionPercentage(data?.ironingData)}
+            percentage={100}
             title="VI: Ironing Section"
           ></Devider>
           <Table
@@ -230,7 +231,7 @@ function App() {
             dataKey="ironingData"
           />
           <Devider
-            percentage={calculateSectionPercentage(data?.qualityData)}
+            percentage={100}
             title="VII: Final Quality Checking"
           ></Devider>
           <Table
@@ -239,7 +240,7 @@ function App() {
             dataKey="qualityData"
           />
           <Devider
-            percentage={calculateSectionPercentage(data?.packingData)}
+            percentage={100}
             title="VIII: Folding/Packing Section"
           ></Devider>
           <Table
@@ -248,7 +249,7 @@ function App() {
             dataKey="packingData"
           />
           <Devider
-            percentage={calculateSectionPercentage(data?.metalDetectionData)}
+            percentage={100}
             title="IX: Metal Detection & Product Safety"
           ></Devider>
           <Table
