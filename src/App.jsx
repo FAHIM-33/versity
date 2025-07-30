@@ -192,8 +192,8 @@ function App() {
           </div>
           <div className="text-2xl font-semibold grow">
             <label htmlFor="">Overall Score:</label>
-            {/* <p>{calculateOverallScore()}%</p> */}
-            <p>100%</p>
+            <p>{calculateOverallScore()}%</p>
+            {/* <p>100%</p> */}
           </div>
           <div>
             <img src="/color.png" className=" h-32" alt="" />
@@ -212,17 +212,18 @@ function App() {
         <section>
           {/* percentage={calculateSectionPercentage(data?.auditData)} */}
           <Devider
-            percentage={100}
+            percentage={calculateSectionPercentage(data?.auditData)}
             title="I: General Quality Management System and Product Safety"
           ></Devider>
           <Table data={data?.auditData} setData={setData} dataKey="auditData" />
+
           <Devider percentage={calculateSectionPercentage(data?.sewingData)} title="V: Sewing Section"></Devider>
           <Table
             data={data?.sewingData} setData={setData}
             dataKey="sewingData"
           />
           <Devider
-            percentage={100}
+            percentage={calculateSectionPercentage(data?.ironingData)}
             title="VI: Ironing Section"
           ></Devider>
           <Table
@@ -231,7 +232,7 @@ function App() {
             dataKey="ironingData"
           />
           <Devider
-            percentage={100}
+            percentage={calculateSectionPercentage(data?.qualityData)}
             title="VII: Final Quality Checking"
           ></Devider>
           <Table
@@ -240,7 +241,7 @@ function App() {
             dataKey="qualityData"
           />
           <Devider
-            percentage={100}
+            percentage={calculateSectionPercentage(data?.packingData)}
             title="VIII: Folding/Packing Section"
           ></Devider>
           <Table
@@ -249,7 +250,7 @@ function App() {
             dataKey="packingData"
           />
           <Devider
-            percentage={100}
+            percentage={calculateSectionPercentage(data?.metalDetectionData)}
             title="IX: Metal Detection & Product Safety"
           ></Devider>
           <Table
